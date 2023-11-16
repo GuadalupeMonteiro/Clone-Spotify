@@ -6,3 +6,4 @@
 - Adicionei acessibilidade ao menu
 
 ## deploy
+https://guadalupemonteiro.github.io/Clone-Spotify/
