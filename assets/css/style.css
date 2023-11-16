@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+:root {
+    --green: #1ed760;
+    --dark-green: #1db954;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+nav ul li a:hover,
+.footer-menu li a:hover,
+.socials a:hover i,
+.footer-info-list li a:hover,
+.rights .country a:hover {
+    color: var(--dark-green);
+    cursor: pointer;
+}
+
+nav {
+    width: 100%;
+    padding: 2rem 11.5%;
+    background-color: rgba(0, 0, 0, .6);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link,
+.logo-link img {
+    height: 4rem;
+    width: auto;
+    z-index: 1;
+}
+
+#btn-nav {
+    display: none;
+}
+
+nav ul {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    padding: 0 1.5rem;
+    transition: all 300ms ease;
+}
+
+nav ul li:nth-child(3) {
+    border-right: 1px solid white;
+}
+
+nav ul li a:focus,
+.footer-menu li a:focus,
+.socials a:focus i,
+.footer-info-list li a:focus {
+    color: var(--dark-green);
+}
+
+/* Showcase */
+main {
+    height: 100vh;
+    background: url(../img/showcase.webp) center center/cover;
+    background-color: rgba(0, 0, 0, .4);
+    background-blend-mode: color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase-container h1 {
+    font-size: clamp(4rem, 6vw + .1rem, 6.5rem);
+}
+
+.showcase-container p {
+    margin: 1.5rem 0;
+    font-size: clamp(1.3rem, 1.3vw + .1rem, 1.4rem);
+}
+
+.showcase-container a {
+    padding: 1.5rem 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3rem;
+    background-color: var(--dark-green);
+    transition: all 300ms ease;
+}
+
+.showcase-container a:hover {
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+/* footer */
+footer {
+    padding: 9rem 0;
+    width: 100%;
+    background: black;
+}
+
+.footer-content {
+    width: 75%;
+    margin: 0 auto 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-menu h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #919496;
+}
+
+.footer-menu li {
+    margin: 2.5rem 0;
+    transition: all 300ms ease;
+}
+
+.footer-menu li a {
+    transition: all 300ms ease;
+}
+
+.socials,
+.footer-info-list {
+    display: flex;
+}
+
+.socials a {
+    width: 5rem;
+    height: 5rem;
+    margin: .8rem;
+    border-radius: 50%;
+    background-color: #222326;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+}
+
+.socials i {
+    font-size: 2.5rem;
+}
+
+.footer-info {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-info-list li {
+    margin: 0 1rem;
+    transition: all 300ms ease;
+}
+
+.footer-info-list li a {
+    padding-top: 5rem;
+    font-size: 1.2rem;
+    color: #919496;
+}
+
+.country {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.rights .country a {
+    transition: all 300ms ease;
+}
+
+.rights .country .brazil-flag {
+    width: auto;
+    height: 2rem;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+@media (max-width: 985px) {
+    #btn-nav {
+        margin: 0 -9px 0 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        position: relative;
+        display: block;
+        z-index: 2;
+    }
+
+    #btn-nav span {
+        width: 24px;
+        height: 3px;
+        margin-top: .5rem;
+        border-radius: 1px;
+        background-color: white;
+        display: block;
+        transition: .4s ease;
+    }
+
+    #nav.active #btn-nav span:nth-child(1) {
+        transform: rotate(45deg);
+    }
+
+    #nav.active #btn-nav span:nth-child(2) {
+        display: none;
+    }
+
+    #nav.active #btn-nav span:nth-child(3) {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: -.5px;
+    }
+
+    #menu-list {
+        width: 0;
+        height: 0;
+        padding: 6rem 3.6rem;
+        background-color: black;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        z-index: 1;
+    }
+
+    nav ul li:nth-child(3) {
+        border-right: none;
+    }
+
+    nav ul li:nth-child(3)::after {
+        content: "";
+        display: block;
+        width: 2rem;
+        height: 2px;
+        margin: 4rem 0 3rem;
+        background-color: white;
+    }
+
+    #nav.active #menu-list {
+        width: 40vh;
+        height: 100vh;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav.active #menu-list li {
+        padding: 0 0 25px;
+    }
+
+    #nav.active #menu-list li a {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    #nav.active #menu-list .sidebar-fnt {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #d9dadc;
+    }
+
+    #nav.active #menu-list .sidebar-fnt:hover {
+        color: var(--dark-green);
+        cursor: pointer;
+    }
+
+    #nav.active #menu-list .sidebar-fnt:focus {
+        color: var(--dark-green);
+    }
+
+    .footer-menu,
+    .footer-info-list {
+        width: 100%;
+        margin-top: 2.5rem;
+    }
+
+    .footer-info,
+    .rights {
+        width: 100%;
+    }
+
+    .rights {
+        margin: 1.5rem auto;
+    }
+
+    .footer-info,
+    .footer-info-list {
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-info-list,
+    .rights .country {
+        margin: 0 auto;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .showcase-container h1,
+    .showcase-container p {
+        text-align: center;
+    }
+
+    .showcase-container a {
+        padding: 1.5rem 3.5rem;
+        border-radius: 3rem;
+    }
+}
